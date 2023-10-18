@@ -1,0 +1,32 @@
+.pageHeader {
+    background-color: green;
+    height : 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size :large;
+}
+
+.pageForm {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardBox {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    justify-self: center;
+    background-color: bisque;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pageForm > span, input {
+    margin : 5px;
+}
