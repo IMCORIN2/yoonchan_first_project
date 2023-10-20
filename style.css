@@ -1,11 +1,15 @@
+body {
+    background-color: rgb(32, 32, 32);
+}
 .pageHeader {
-    background-color: green;
+    background-color: rgb(29, 28, 28);
     height : 100px;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size :large;
+    font-size :xx-large;
+    color : white;
 }
 
 .pageForm {
@@ -13,20 +17,40 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: rgb(62, 66, 65);
+    height : 80px;
 }
 
-.cardBox {
+
+
+.movieCard {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
     margin: 20px;
     padding: 20px;
     width: 300px;
     justify-self: center;
-    background-color: bisque;
+    background-color: rgb(114, 111, 107);
     border-radius: 10px;
     cursor: pointer;
     user-select: none;
+    display : box;
+    text-align: center;
 }
 
+.movieCard > img {
+    width : 250px;
+    
+    
+}
 .pageForm > span, input {
     margin : 5px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr;
+}
+
+.nono {
+    background-color: white;
 }
