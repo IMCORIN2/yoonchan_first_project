@@ -9,10 +9,10 @@
 
 <body>
     <header class="pageHeader"> 영화 소개</header>
-    <form class="pageForm">
+    <form onsubmit="trueFunc(event)" class="pageForm">
         <span>영화 검색 :</span>
         <input type="text" id="inputText" placeholder="영화 제목을 검색해 보세요">
-        <input type="button" class="inputBtn" value="검색">
+        <button type="submit" id="inputBtn" value="검색">검색</button>
     </form>
     <section>
         <div id="grid" class="cardContainer">

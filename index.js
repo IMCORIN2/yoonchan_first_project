@@ -49,16 +49,23 @@ fetch(
 
 
 //버튼 누르면 input value 값으로 필터링하기.
-const $inputBtn = document.querySelector('.inputBtn');
+const $inputBtn = document.querySelector('#inputBtn');
 const $inputText = document.getElementById('inputText');
 
+
+// onsubmit 무조건 submit하게 만들어 줌.
+function trueFunc(event) {
+  event.preventDefault();
+  return true;
+}
+
 $inputBtn.addEventListener('click', filterMovieCard);
-$inputText.addEventListener('keyup', (event)=>{
+$inputText.addEventListener('keyup', (event) => {
   let key = event.key || event.keyCode;
-  if (key === 13) {
-    event.preventDefault();
-    filterMovieCard()
-}  
+
+  if (key == 13) {
+    $inputBtn.click();
+  }
 });
 
 function filterMovieCard() {
@@ -76,7 +83,7 @@ function filterMovieCard() {
     .then((data) => {
       const $movieCardList = document.querySelector(".cardContainer");
 
-      // filtering하기
+      // filtering
       const filteredVal = data.results.filter((movie) => {
         return movie.title.toLowerCase().includes($inputText.value.toLowerCase());
       })
@@ -91,6 +98,13 @@ function filterMovieCard() {
           <p>rating : ${movie.vote_average}</p>`;
 
         $movieCardList.appendChild($movieCard);
+
+        // 카드 클릭시 alert 띄우기
+        $movieCard.addEventListener('click', printID);
+
+        function printID() {
+          alert(`영화 id: ${movie.id}`);
+        };
       })
     })
     .catch((err) => console.error(err));
@@ -99,3 +113,6 @@ function filterMovieCard() {
 
 // 이미지 클릭 시 사이트로 이동
 // a태그로 걸어서 네이버 도메인 맨 뒤에 영화이름 넣으면 될듯?
+// 로그인 기능 구현
+// 나만의 즐겨찾기 구현
+// 좋아요 누른 카드 상위에 띄워지도록 구현
